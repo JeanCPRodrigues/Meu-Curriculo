@@ -1,10 +1,20 @@
 /* IMPORT FONT GOOGLE */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+/* IMPORT ICON BOOTSTRAP */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
 /* VARIAVEIS DE AMBIENTE */
 :root {
     --gray-primary: #e9e9e9;
-    --gray-secondary: #c7c7c7;
+    --gray-secondary: #fbfbfb;
+    --black-primary: #495057;
+    --black-secondary: #bbc2c9;
+
+    --green-primary: #9eeaf9;
+    --blue-primary: #0a58ca33;
+
+    --yellow-primary: #ffc107;
 }
 
 /* RESETA TODOS OS ELEMENTOS */
@@ -17,14 +27,22 @@ a {
     cursor: pointer;
 }
 
+/* ICOM STAR */
+.bi-star-fill {
+    color: var(--yellow-primary);
+}
+/* ICON BALLOOM */
+.bi-balloon-fill {
+    color: #e5143d;
+}
+
 /* BODY */
 body {
-    width: 100vw;
     height: 100vh;
 }
 
 /* LISTA SOBRE */
-ul {
+ul,ol {
     list-style: none;
     padding: 0px !important;
     margin: 0px !important;
@@ -34,48 +52,18 @@ ul:nth-child(1) > li {
     margin: 0px;
 }
 
-.col:nth-child(2n+2) > ul > li > label {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    font-size: 3vw;
-    color: green;
-} /* LISTA A DIREITA COM MAIS DETALHE */
-.col:nth-child(2n+2) > ul > li:nth-child(3n) {
-    display: flex;
-    justify-content: space-between;
-} /* SEGUNDO ELEMENTO DO BOX DETALHADO */
-.col:nth-child(2n+2) > ul > li:nth-child(2n) {
-    margin: 10px 0 10px 10px;
-    padding: 0 0 0 10px;
-    border-left: 2px solid green;
-} /* TERCEIRO ITEM DO BOX DETALHADO */
-
-.col:nth-child(2n+1) > ul > li > label {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    color: red;
-} /* LISTA A ESQUERDA COM DADOS PESSOAIS */
-.container > .row > .col:nth-child(2n+2) > div > div:nth-child(2n+1) {
-    background: var(--gray-primary);
-    padding: 10px;
-} /* CONTAINER ESQUERDO */
-.container > .row > .col:nth-child(2n+2) > div > div:nth-child(1) {
-    padding: 10px;
-    border-top: 2px solid gray;
-} /* PRIMEIRO ITEM DADOS PESSOAIS ESQUERDO */
-.container > .row > .col:nth-child(2n+2) > div > div:nth-child(2n+2) {
-    padding: 10px;
-    border-top: 2px solid gray;
-} /* CONTAINER LINHA MULTIPLO DE 2 */
-
 /* ROW IMAGEM */
 .container > .row > .col:nth-child(1) {
     padding: 0px;
 } /* BOX IMAGEM + NOME */
+.container > .row > .col:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+    border-right: 4px solid var(--gray-primary);
+} /* APENAS IMAGEM */
 .container > .row > .col:nth-child(1) > div:nth-child(1) {
     display: flex;
     align-items: center;
     margin: 20px 0px 20px 0px;
+    border: 4px solid var(--gray-primary);
     width: 100%;
     background: var(--gray-secondary);
     justify-content: flex-start;
@@ -88,6 +76,60 @@ ul:nth-child(1) > li {
 .container > .row > .col:nth-child(1) > div:nth-child(1) > div:nth-child(2) {
     margin: 0 0 0 calc(20px + 4vw);
 } /* NOME */
+
+.col:nth-child(2n+2) > ul > li > label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: max(3vw, 20pt);
+    color: var(--black-primary);
+} /* LISTA A DIREITA COM MAIS DETALHE */
+.col:nth-child(2n+2) > ul > li:nth-child(3n) {
+    display: flex;
+    justify-content: space-between;
+} /* SEGUNDO ELEMENTO DO BOX DETALHADO */
+.col:nth-child(2n+2) > ul > li:nth-child(2n) {
+    margin: 10px 0 10px 10px;
+    padding: 0 0 0 10px;
+    border-left: 4px solid var(--green-primary);
+    background: #cff4fc;
+} /* TERCEIRO ITEM DO BOX DETALHADO */
+
+.col:nth-child(2n+1) > ul {
+    position: sticky;
+    top: 10px;
+} /* LISTAS DADOS PESSOAIS ACOMPANHAR SCROLL */
+.col:nth-child(2n+1) > ul > li > label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    margin: 10px 0 0 0;
+    padding: 5px;
+    border-radius: 10px 10px 0 0;
+    color: var(--black-primary);
+    background: var(--black-secondary);
+} /* LISTA A ESQUERDA COM DADOS PESSOAIS [LABEL] */
+.col:nth-child(2n+1) > ul > li:nth-child(2n+2) {
+    padding: 5px 10px 4px 10px;
+    background: var(--blue-primary);
+    border-radius: 0 10px 10px 10px;
+    border-bottom: 3px solid var(--gray-primary);
+} /* LISTA A ESQUERDA COM DADOS PESSOAIS [LI -> CHILD] */
+.col:nth-child(2n+1) > ul > li:nth-child(2n+2) > div {
+    display: flex;
+    justify-content: space-between;
+} /* ITEM IDIOMAS */
+.container > .row > .col:nth-child(2n+2) > div > div:nth-child(2n+1) {
+    background: var(--gray-secondary);
+    padding: 10px;
+} /* CONTAINER ESQUERDO */
+.container > .row > .col:nth-child(2n+2) > div > div:nth-child(1) {
+    padding: 10px;
+    border-top: 3px solid var(--gray-primary);
+} /* PRIMEIRO ITEM DADOS PESSOAIS ESQUERDO */
+.container > .row > .col:nth-child(2n+2) > div > div:nth-child(2n+2) {
+    padding: 10px;
+    border-top: 3px solid var(--gray-primary);
+    
+} /* CONTAINER LINHA MULTIPLO DE 2 */
 
 .container > .row > .col {
     display: flex;
