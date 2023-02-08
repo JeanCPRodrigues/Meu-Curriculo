@@ -75,7 +75,7 @@ ul:nth-child(1) > li {
 .container > .row > .col:nth-child(1) > div:nth-child(1) > div:nth-child(2) > h1 {
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
-    font-size: calc(3vw - 0.1vw) ;
+    font-size: max(18pt, 3vw) ;
 } /* NOME > FONT */
 .container > .row > .col:nth-child(1) > div:nth-child(1) > div:nth-child(2) {
     margin: 0 0 0 calc(20px + 4vw);
