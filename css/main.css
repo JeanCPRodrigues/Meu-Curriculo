@@ -6,12 +6,16 @@
 
 /* VARIAVEIS DE AMBIENTE */
 :root {
+
     --gray-primary: #e9e9e9;
     --gray-secondary: #fbfbfb;
+    --gray-option: #d4e0e3;
+
     --black-primary: #495057;
     --black-secondary: #bbc2c9;
 
     --green-primary: #9eeaf9;
+    --green-secondary: #dcf2f7;
     --blue-primary: #0a58ca33;
 
     --yellow-primary: #ffc107;
@@ -117,6 +121,22 @@ ul:nth-child(1) > li {
     display: flex;
     justify-content: space-between;
 } /* ITEM IDIOMAS */
+.col:nth-child(2n) > ul > li:nth-child(3n+5) {
+    padding: 0px;
+} /* ITEM TEXTO DIREITA COM DADOS PESSOAIS */
+.col:nth-child(2n) > ul > ol:nth-child(3n+5) {
+    margin: 0 0 0 0 !important;
+} /* LISTA APTIDAO */
+.col:nth-child(2n) > ul > ol:nth-child(3n+5) > ol {
+    padding: 10px !important;
+    display: flex;
+    justify-content: space-between;
+    background: var(--gray-secondary);
+} /* ELEMENTOS LISTA APTIDAO */
+.col:nth-child(2n) > ul > ol:nth-child(3n+5) > ol:nth-child(2n) {
+    background: var(--gray-option);
+    border-bottom: 4px solid var(--black-secondary);
+}
 .container > .row > .col:nth-child(2n+2) > div > div:nth-child(2n+1) {
     background: var(--gray-secondary);
     padding: 10px;
