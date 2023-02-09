@@ -56,6 +56,16 @@ ul:nth-child(1) > li {
     margin: 0px;
 }
 
+/* ALL INPUTS */
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-form-control-bg);
+    border-color: transparent !important;
+    outline: 0;
+    border-bottom: 3px solid var(--gray-primary);
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 1%) !important;
+}
+
 /* ROW IMAGEM */
 .container > .row > .col:nth-child(1) {
     padding: 0px;
@@ -92,11 +102,21 @@ ul:nth-child(1) > li {
     justify-content: space-between;
 } /* SEGUNDO ELEMENTO DO BOX DETALHADO */
 .col:nth-child(2n+2) > ul > li:nth-child(2n) {
-    margin: 10px 0 10px 10px;
+    margin: 10px 0 10px 0px;
     padding: 0 0 0 10px;
     border-left: 4px solid var(--green-primary);
     background: #cff4fc;
 } /* TERCEIRO ITEM DO BOX DETALHADO */
+.col:nth-child(2n+2) > ul > li:nth-child(2n) > div:nth-child(1) {
+    padding: 10px 10px 10px 0;
+}
+.col:nth-child(2n+2) > ul > li:nth-child(2n) > div:nth-child(2) {
+    padding: 0 10px 10px 0;
+} /* BOX INPUT FILTER APITIDAO */
+.col:nth-child(2n+2) > ul > li:nth-child(2n) > div:nth-child(2) > div > input {
+    border-radius: 0px;
+    border-bottom: 3px solid var(--gray-primary);
+} /* INPUT FILTER APITIDAO */
 
 .col:nth-child(2n+1) > ul {
     position: sticky;
@@ -124,16 +144,16 @@ ul:nth-child(1) > li {
 .col:nth-child(2n) > ul > li:nth-child(3n+5) {
     padding: 0px;
 } /* ITEM TEXTO DIREITA COM DADOS PESSOAIS */
-.col:nth-child(2n) > ul > ol:nth-child(3n+5) {
+.col:nth-child(2n) > ul > ul:nth-child(3n+5) {
     margin: 0 0 0 0 !important;
 } /* LISTA APTIDAO */
-.col:nth-child(2n) > ul > ol:nth-child(3n+5) > ol {
+.col:nth-child(2n) > ul > ul:nth-child(3n+5) > ol {
     padding: 10px !important;
     display: flex;
     justify-content: space-between;
     background: var(--gray-secondary);
 } /* ELEMENTOS LISTA APTIDAO */
-.col:nth-child(2n) > ul > ol:nth-child(3n+5) > ol:nth-child(2n) {
+.col:nth-child(2n) > ul > ul:nth-child(3n+5) > ol:nth-child(2n) {
     background: var(--gray-option);
     border-bottom: 4px solid var(--black-secondary);
 }
