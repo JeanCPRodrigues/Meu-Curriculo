@@ -3,6 +3,7 @@
 
     const inputFilter = "#inputFinderAptidao";
     const listaUlAptidao = "#ulListAptidao";
+    const spanInfoViewListAptidao = ".totalItemFindAptidaoView";
 
     // SELETOR DE ELEMENTOS
     const select = (el, all = false) => {
@@ -31,21 +32,25 @@
 
         try {
 
-            var input, filter, ul, ol, label, i, txtValue;
+            var input, filter, ul, ol, label, i, txtValue, visible, totalItemOl;
             input = document.getElementById(inputFilter.replace(/[#]/g, ''));
             filter = input.value.toUpperCase();
             ul = document.getElementById(listaUlAptidao.replace(/[#]/g, ''));
             ol = ul.getElementsByTagName("ol");
+            totalItemOl = ol.length;
+            visible = 0;
             for (i = 0; i < ol.length; i++) {
                 label = ol[i].getElementsByTagName("label")[0];
                 txtValue = label.textContent || label.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
                     ol[i].style.display = "";
+                    visible++;
                 } else {
                     ol[i].style.display = "none";
-                }
-                console.log(ol[i]);
+                }   
             }
+            var spanInfoFindAptidao = select(spanInfoViewListAptidao);
+            spanInfoFindAptidao.innerText = `Lista: ${visible} de ${totalItemOl} (${(visible/totalItemOl*100).toFixed(0)}%)`;
 
         } catch (x) {
             console.log(x);
@@ -58,11 +63,15 @@
 
         try {
             filterList();
-            console.log('KeyPress');
         } catch (x) {
             console.log(x);
         }
 
     });
+
+
+    setTimeout(function(){
+        filterList();
+    }, 1);
 
 })();
