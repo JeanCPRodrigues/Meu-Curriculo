@@ -52,7 +52,6 @@
         }
 
     }
-    filterList();
 
     // AO DIGITAR NO INPUT FILTER LIST
     on('keydown', inputFilter, function (e) {
